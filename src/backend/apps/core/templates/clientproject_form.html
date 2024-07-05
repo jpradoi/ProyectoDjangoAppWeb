@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.instance.pk|yesno:"Edit Client-Project Relationship,Add Client-Project Relationship" }}</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Edit Client-Project Relationship,Add Client-Project Relationship" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'clientproject_list' %}">Cancel</a>
+</body>
+</html>

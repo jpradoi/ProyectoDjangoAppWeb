@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Client-Project Relationship</title>
+</head>
+<body>
+    <h1>Delete Client-Project Relationship</h1>
+    <p>Are you sure you want to delete the relationship between {{ object.client.name }} and {{ object.project.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+    </form>
+    <a href="{% url 'clientproject_list' %}">Cancel</a>
+</body>
+</html>

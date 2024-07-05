@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client-Project Relationships</title>
+</head>
+<body>
+    <h1>Client-Project Relationships</h1>
+    <a href="{% url 'clientproject_create' %}">Add Client-Project Relationship</a>
+    <ul>
+        {% for clientproject in clientprojects %}
+        <li>
+            {{ clientproject.client.name }} - {{ clientproject.project.name }} - {{ clientproject.role }}
+            <a href="{% url 'clientproject_update' clientproject.pk %}">Edit</a>
+            <a href="{% url 'clientproject_delete' clientproject.pk %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
